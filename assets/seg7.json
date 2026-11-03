@@ -1,0 +1,5 @@
+{
+  "title": "Main.java — demoState() (State)",
+  "out": "shot7_state.png",
+  "text": "=================================================\n  Pattern 5: State\n=================================================\nSame hero, behavior changes with HP; transitions happen automatically.\n\n[Recruit] Flash the Speedster joins the squad! (Aggressive style)\nStart: Available (power 100%)\n  >> Flash is now OnMission\nEnter battle -> OnMission\nTaking a big hit (down to low HP)...\n  >> Flash is now Injured\n  Now: Injured (power 60%)  HP 15\nTaking a finishing blow...\n  >> Flash is now Retired\n  Now: Retired canAct=false"
+}

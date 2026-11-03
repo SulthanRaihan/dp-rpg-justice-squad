@@ -1,0 +1,5 @@
+{
+  "title": "Main.java — demoStrategy() (Strategy)",
+  "out": "shot6_strategy.png",
+  "text": "=================================================\n  Pattern 1: Strategy\n=================================================\nSame raw power, different damage per combat style.\n\n  Aggressive  | attack from power 12 = 20 | blocks from 20 incoming = 0\n  Defensive   | attack from power 12 = 14 | blocks from 20 incoming = 10\n  Tactical    | attack from power 12 = 17 | blocks from 20 incoming = 5"
+}

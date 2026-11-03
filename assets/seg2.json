@@ -1,0 +1,5 @@
+{
+  "title": "Game.java — Equip Gear (Decorator)",
+  "out": "shot2_gear.png",
+  "text": "Choose your gear:\n  1) Suit only         (+0 power)\n  2) Suit + Cape       (+3 power)\n  3) Suit + Shield     (+5 power)\n  4) Suit + Cape + Shield + Gadget (+12 power)\nYour choice [1-4]: 4\nGear equipped: Suit + Cape + Shield + Gadget (+12 power)"
+}

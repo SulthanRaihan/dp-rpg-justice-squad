@@ -1,0 +1,5 @@
+{
+  "title": "Game.java — Battle Turn with Undo (Command)",
+  "out": "shot4_undo.png",
+  "text": "Nova  HP 66/80  [Aggressive style, gear: Suit + Cape + Shield + Gadget, state: OnMission]\nDr. Octopus  HP 90\nState: In the field, trading blows with a villain.\n\nActions:\n  1) Attack  (standard hit)\n  2) Defend  (recover HP, skip attack)\n  3) Ability (signature move, extra damage)\n  4) Undo    (free -- reverses last action)\n  0) Retreat (quit)\nYour choice: 4\n\n  Undoing: Attack (Aggressive)\n  [Undo] Attack cancelled -- Mr Beast HP restored to 28."
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Game.java — City Alert (Observer)",
+  "out": "shot3_alert.png",
+  "text": "  [ALERT] Threat at Downtown! Danger level 7. Dispatching...\n  Nova answers the call -- heading to Downtown!\n  [News-CNN] BREAKING: villain spotted at Downtown (danger 7/10)!\n\n  >> Nova is now OnMission\n=================================================\n  A villain appears: Mr Beast (HP 60)\n================================================="
+}

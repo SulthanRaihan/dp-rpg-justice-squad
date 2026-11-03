@@ -1,0 +1,5 @@
+{
+  "title": "Main.java — demoComposite() (Composite)",
+  "out": "shot8_composite.png",
+  "text": "=================================================\n  Pattern 7: Composite\n=================================================\nawardXp(50) on a league reaches every hero -- structure is transparent.\n\nStructure:\n  + Team \"Justice League\"  (total XP:0)\n    + Team \"Team Alpha\"  (total XP:0)\n      - Bolt  [XP:0, Available]\n      - Titan  [XP:0, Available]\n    + Team \"Team Beta\"  (total XP:0)\n      - Orin  [XP:0, Available]\n    - Dash  [XP:0, Available]\n\nCalling awardXp(50) on the league:\n  [Team] \"Justice League\" awarding 50 XP to all members:\n  [Team] \"Team Alpha\" awarding 50 XP to all members:\n  Bolt earns 50 XP (total 50)\n  Titan earns 50 XP (total 50)\n  [Team] \"Team Beta\" awarding 50 XP to all members:\n  Orin earns 50 XP (total 50)\n  Dash earns 50 XP (total 50)\n\nAfter awardXp -- total league XP: 200"
+}

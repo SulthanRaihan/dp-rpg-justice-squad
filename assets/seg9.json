@@ -1,0 +1,5 @@
+{
+  "title": "Main.java — demoSingleton() (Singleton)",
+  "out": "shot9_singleton.png",
+  "text": "=================================================\n  Pattern 8: Singleton\n=================================================\ngetInstance() always returns the same headquarters.\n\n  a == b : true\n[HeroHQ] Report -- heroes recruited: 0 | villains defeated: 0"
+}

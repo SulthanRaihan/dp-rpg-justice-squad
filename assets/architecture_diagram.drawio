@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net" modified="2026-06-23T00:00:00.000Z" agent="claude-code" version="24.0.0" type="device">
+  <diagram name="Package Architecture" id="arch-diagram-1">
+    <mxGraphModel dx="1024" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1040" pageHeight="820" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Client -->
+        <mxCell id="client" value="Game.java / Main.java&#10;(Client / Entry Point)" style="html=1;whiteSpace=wrap;fillColor=#fdf3e6;strokeColor=#b9770e;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=70;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="370" y="40" width="300" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: orchestration packages -->
+        <mxCell id="factory" value="hero.factory" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#1f3a5f;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=50;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="190" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="command" value="hero.command" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#1f3a5f;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=50;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="190" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="iterator" value="hero.iterator" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#1f3a5f;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=50;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="520" y="190" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="singleton" value="hero.singleton" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#1f3a5f;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=50;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="760" y="190" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3: shared core -->
+        <mxCell id="core" value="hero.core&#10;(Hero, Villain)" style="html=1;whiteSpace=wrap;fillColor=#eafaf1;strokeColor=#1e8449;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=70;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="370" y="350" width="300" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- Row 4: patterns composed inside Hero -->
+        <mxCell id="strategy" value="hero.strategy" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#1f3a5f;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=50;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="decorator" value="hero.decorator" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#1f3a5f;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=50;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="520" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="state" value="hero.state" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#1f3a5f;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=50;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="520" y="520" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="observer" value="hero.observer" style="html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#1f3a5f;verticalAlign=top;shadow=0;dashed=0;shape=folder;fontStyle=1;fontSize=13;spacingTop=10;tabWidth=50;tabHeight=14;tabPosition=left;" vertex="1" parent="1">
+          <mxGeometry x="760" y="520" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Dependencies: client -> row2 -->
+        <mxCell id="e1" style="html=1;endArrow=open;endFill=0;dashed=1;endSize=10;edgeStyle=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="client" target="factory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="html=1;endArrow=open;endFill=0;dashed=1;endSize=10;edgeStyle=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="client" target="command">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="html=1;endArrow=open;endFill=0;dashed=1;endSize=10;edgeStyle=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="client" target="iterator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="html=1;endArrow=open;endFill=0;dashed=1;endSize=10;edgeStyle=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="client" target="singleton">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Dependencies: row2 -> core (factory, command, composite) -->
+        <mxCell id="e5" style="html=1;endArrow=open;endFill=0;dashed=1;endSize=10;edgeStyle=none;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="factory" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="html=1;endArrow=open;endFill=0;dashed=1;endSize=10;edgeStyle=none;exitX=0.5;exitY=1;entryX=0.4;entryY=0;" edge="1" parent="1" source="command" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="html=1;endArrow=open;endFill=0;dashed=1;endSize=10;edgeStyle=none;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="iterator" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Composition: core -> row4 (internal patterns) -->
+        <mxCell id="e9" style="html=1;startArrow=diamondThin;startFill=1;endArrow=none;edgeStyle=none;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="core" target="strategy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" style="html=1;startArrow=diamondThin;startFill=1;endArrow=none;edgeStyle=none;exitX=0.4;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="core" target="decorator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="html=1;startArrow=diamondThin;startFill=1;endArrow=none;edgeStyle=none;exitX=0.6;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="core" target="state">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="html=1;startArrow=diamondThin;startFill=1;endArrow=none;edgeStyle=none;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="core" target="observer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Caption -->
+        <mxCell id="caption" value="Figure 1. Package Architecture - Justice Squad Superhero Battle" style="text;html=1;align=center;verticalAlign=middle;fontColor=#555555;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="370" y="730" width="300" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

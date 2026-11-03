@@ -1,0 +1,5 @@
+{
+  "title": "Main.java — demoIterator() (Iterator)",
+  "out": "shot10_iterator.png",
+  "text": "=================================================\n  Pattern 7: Iterator\n=================================================\nVillainWave hides its storage -- the client only ever calls add() and\nwalks it with a for-each loop, never touching the underlying List.\n\nWalking the wave with a plain for-each loop:\n  -> Slime  HP 40\n  -> Goblin  HP 55\n  -> Ogre  HP 70"
+}

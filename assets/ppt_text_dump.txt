@@ -1,0 +1,235 @@
+--- page 1 ---
+JUSTICE
+SQUAD
+Superhero Battle - Final Project Software Design Pattern
+Software Design Pattern
+苏睿涵 - L25020028
+Page 01
+
+--- page 2 ---
+PROJECT OVERVIEW
+Core Gameplay Loop
+Software Design Pattern
+Page 03
+Demonstrates 8 Gang of Four
+Design Patterns
+All patterns integrated into a
+single gameplay system
+A text-based Java console
+game
+Recruit Hero → Equip Gear → Receive City Alert → Battle Villains → Undo Actions → Track Results
+
+--- page 3 ---
+Plain Java, no external libraries, input via Scanner
+Game.java = interactive game
+Main.java = scripted demo per pattern
+TECHNOLOGY STACK
+Software Design Pattern
+Page 02
+
+--- page 4 ---
+Game.java / Main.java are the only two clients of
+the whole codebase
+Entry Point
+Software Design Pattern
+Page 04
+SYSTEM
+ARCHITECTURE
+Hero is the single class where 4 patterns meet at once -
+that's why attack() reads like a short pipeline instead of a
+wall of if/else.
+Client calls Factory, Command, Iterator, and
+Singleton straight away
+Direct dependencies
+hero.core (Hero, Villain) sits in the middle - every
+pattern eventually touches it
+Shared core
+ Strategy, Decorator, State, and Observer aren't
+called by the client at all - they live inside Hero itself
+Composed inside Hero
+
+--- page 5 ---
+the Player drives everything - recruit a hero, equip
+gear, respond to a threat, then battle
+One actor, one flow
+ it's the parent use case generalized by Attack,
+Defend, Use Ability, and Undo Action
+Battle Villain is the core
+responding to a threat alert automatically includes
+entering battle, and Battle Villain automatically
+includes the villain's counter-attack
+<<include>> = automatic, not chosen
+Software Design Pattern
+Page 04
+USECASE
+ANALYSIS
+No second human role, no hidden menu - every action the Player doesn't
+choose (entering battle, the counter-attack) is wired in through an
+<<include>> arrow instead.
+
+--- page 6 ---
+Each pattern earns its place because it solves a problem this exact
+game already has - none of them were bolted on just to hit the
+"minimum 8" requirement.
+Building the Hero
+Driving the battle
+Coordinating the session
+Software Design Pattern
+Page 11
+WHY THESE 8 PATTERNS?
+Factory Method picks the right archetype
+Decorator stacks gear bonuses on top
+Strategy computes damage
+State tracks HP-driven condition
+Command makes every action undoable
+Iterator walks the villain wave
+Observer broadcasts one threat to many
+independent reactions
+Singleton keeps one shared scoreboard across
+everything
+
+--- page 7 ---
+Three hero archetypes (Speedster, Tank, Mage) need
+different HP, power, and combat style at recruitment -
+without an if/switch chain inside Game.java
+Problem
+HeroFactory.recruit() is a template method - it calls the
+abstract createHero(), and each concrete factory
+overrides it to decide which Hero gets built.
+Solution
+Software Design Pattern
+Page 14
+FACTORY METHOD
+Without Factory Method: recruit() needs a switch on hero type. 
+With it: each factory subclass just knows how to build its own hero -
+recruit() never changes.
+
+--- page 8 ---
+Combat feel must differ per hero (hits hard vs. blocks
+damage) without rewriting Hero for every style.
+Problem
+Hero never computes damage itself - it holds one
+CombatStyle and delegates all the math to it inside
+attack()
+Solution
+Software Design Pattern
+Page 14
+STRATEGY METHOD
+Without Strategy: Hero needs if/else per style. 
+With Strategy: swap the CombatStyle object - Hero's code never
+changes.
+
+--- page 9 ---
+Gear bonuses (Cape, Shield, Gadget) must stack in any
+combination without a subclass per combination.
+Problem
+GearUpgrade is both a Gear AND a holder of one - it
+wraps an inner layer and adds its own delta on top of
+whatever that layer already returns.
+Solution
+Software Design Pattern
+Page 14
+DECORATOR METHOD
+Without Decorator: 1 subclass per combination (8 combos = 8 classes).
+With Decorator: 3 small classes, stacked freely, give all 8 combinations.
+
+--- page 10 ---
+One city threat must reach the hero AND the news,
+without AlertSystem knowing either of them.
+Problem
+AlertSystem only knows it's holding a list of
+AlertObserver - it has no idea one of them is a Hero and
+another is a NewsReporter.
+Solution
+Software Design Pattern
+Page 14
+OBSERVER METHOD
+Without Observer: AlertSystem must know every observer's type to notify it. 
+With Observer: adding a new reaction needs zero changes to AlertSystem.
+
+--- page 11 ---
+Hero condition (Available/OnMission/Injured/Retired)
+must change automatically with HP, not via scattered if-
+checks.
+Problem
+HeroContext holds the current HeroState and
+recalculates it every time HP changes - Game.java
+never assigns a state directly.
+Solution
+Software Design Pattern
+Page 14
+STATE METHOD
+Without State: HP checks scattered everywhere as if/else. 
+With State: each condition is its own class - the hero's behavior changes
+automatically.
+
+--- page 12 ---
+Every battle action must be undoable, without each
+action knowing about every other action.
+Problem
+CommandHistory only ever calls execute() and undo() -
+it has no idea whether it's holding an attack, a defend,
+or a signature ability.
+Solution
+Software Design Pattern
+Page 14
+COMMAND METHOD
+Without Command: undo logic gets tangled into every action type
+separately. 
+With Command: CommandHistory reverses anything through one generic
+interface.
+
+--- page 13 ---
+The villain wave must be walked one at a time, without
+Game.java knowing how it's stored.
+Problem
+VillainWave implements Iterable - Game.java just writes
+a plain for-each loop, never touching the underlying List
+directly.
+Solution
+Software Design Pattern
+Page 14
+ITERATOR METHOD
+Without Iterator: Game.java needs to know it's a List and loop by index.
+ 
+With Iterator: the storage is hidden completely - it could change
+tomorrow and nothing else would notice.
+
+--- page 14 ---
+Recruit/victory counters must be shared from one place
+across the whole session.
+Problem
+The private constructor blocks anyone from building a
+HeroHQ directly - getInstance() is the only way in, and it
+always hands back the same object.
+Solution
+Software Design Pattern
+Page 14
+SINGLETON METHOD
+Without Singleton: counters get scattered
+or passed around manually. 
+With Singleton: 3 calls from 3 different
+places, still the exact same object.
+
+--- page 15 ---
+not just described - every screenshot in this deck
+came straight from Game.java
+All 8 patterns ran live
+4 patterns meet inside one class at once (Strategy,
+Decorator, State, Observer) - that's the difference
+between patterns coexisting vs. patterns actually
+working together
+Hero is the proof they cooperate:
+Software Design Pattern
+Page 10
+SUMMARY
+Scope stayed narrow on purpose:
+console-only, no save system, scripted villains - so the effort went
+into getting the 8 patterns right, not building a bigger game
+
+--- page 16 ---
+Software Design Pattern
+Page 15
+THANK YOU 
+苏睿涵 - L25020028
+
